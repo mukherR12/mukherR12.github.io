@@ -13,7 +13,7 @@ def run(event):
             bank = [int(cell) for cell in bank]
             maxes = []
             marker = 0
-            for i in range(-(part+1), 0):
+            for i in range(-(part-1), 0):
                 maxi = max(bank[marker:i])
                 maxes.append(maxi)
                 marker += bank[marker:i].index(maxi) + 1    

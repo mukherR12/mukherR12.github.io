@@ -1,7 +1,7 @@
 from pyscript import document
 from pyodide.ffi import create_proxy
 
-def run_code():
+def run_code(event):
     raw_input = document.getElementById("day1-box").value
     lines = raw_input.strip().splitlines()
 
