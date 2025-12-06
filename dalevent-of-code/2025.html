@@ -48,7 +48,7 @@
         <script type="py" src = "./python/day4.py"></script>
 
         <h2>Day 5</h2>
-        <p>javascript one-liner for part 1 and 2 (paste into console of aoc input page):<br>
+        <p>javascript 'one-liner' for part 1 and 2 (paste into console of aoc input page):<br>
         <code style="font-family: 'Courier New', Courier, monospace; font-size: smaller; font-weight: lighter;">{[freshranges, ids, part2, part1, lastmax] = [document.getElementsByTagName("pre")[0].innerText.split("\n").slice(0, document.getElementsByTagName("pre")[0].innerText.split("\n").indexOf("")).map(x => x.split("-").map(n => Number(n))).sort((a,b) => a[0] - b[0] || a[1] - b[1]), document.getElementsByTagName("pre")[0].innerText.split("\n").slice(document.getElementsByTagName("pre")[0].innerText.split("\n").indexOf("")+1).map(x => Number(x)), 0, 0, 0]} for (let i = 0; i < ids.length; i++) {freshranges.some(x => x[0] <= ids[i] && ids[i] <= x[1]) ? part1++ : {}} for (let i = 0; i < freshranges.length; i++) {[part2, lastmax] = [part2 + ((freshranges[i][0] > lastmax) ? (freshranges[i][1] - freshranges[i][0] + 1) : ((freshranges[i][1] > lastmax) ? (freshranges[i][1] - lastmax) : 0)), freshranges[i][1]]} console.log("Part 1 result is " + part1 + ", Part 2 result is " + part2);</code></p>
         <textarea id="day5-box" rows="12" cols="60" placeholder="put your own input here..."></textarea><br>
         <button id="day5-btn">Run</button>
@@ -57,6 +57,21 @@
         <h3>Output (Part 2):</h3>
         <pre id="day5-out-2"></pre>
         <script type="py" src = "./python/day5.py"></script>
+
+        <h2>Day 6</h2>
+        <p>javascript 'one-liner' for part 1 and 2 (paste into console of aoc input page):<br>
+        <code style="font-family: 'Courier New', Courier, monospace; font-size: smaller; font-weight: lighter;">let [numbers, pointer, vals, su] = [Array.from({length: (l = document.getElementsByTagName(&quot;pre&quot;)[0].innerText.split(&quot;\n&quot;).slice(0,-2))[0].length},(_,i)=&gt; l.map(x =&gt;x [i]).join(&quot;&quot;)).concat(&quot; &quot;), 0, [], 0]; 
+{numbers.forEach(num =&gt; num.trim(/\s+/) == &quot;&quot; ? (vals.length &amp;&amp; (su += (document.getElementsByTagName(&quot;pre&quot;)[0].innerText.split(&quot;\n&quot;).slice(0,-1).at(-1).trim().split(/\s+/))[pointer] == &quot;*&quot; ? vals.reduce((a,b) =&gt; a*b,1) : vals.reduce((a,b)=&gt;a+b,0), pointer += 1, vals=[])) : vals.push(Number(num)))} 
+{[lines, nums, ops, part1] = [document.getElementsByTagName(&quot;pre&quot;)[0].innerText.split(&quot;\n&quot;).slice(0,-1), document.getElementsByTagName(&quot;pre&quot;)[0].innerText.split(&quot;\n&quot;).slice(0,-1).slice(0,-1).map(l=&gt;l.trim().split(/\s+/).map(Number)), document.getElementsByTagName(&quot;pre&quot;)[0].innerText.split(&quot;\n&quot;).slice(0,-1).at(-1).trim().split(/\s+/), 0]} 
+{for(let i=0;i&lt;nums[0].length;i++) part1 += ops[i]===&quot;*&quot; ? nums.map(r=&gt;r[i]).reduce((a,b)=&gt;a*b,1) : nums.map(r=&gt;r[i]).reduce((a,b)=&gt;a+b,0)} 
+console.log(&quot;part1 solution is &quot; + part1,&quot;and part2 solution is &quot; + su);</code></p>
+        <textarea id="day6-box" rows="12" cols="60" placeholder="put your own input here..."></textarea><br>
+        <button id="day6-btn">Run</button>
+        <h3>Output (Part 1):</h3>
+        <pre id="day6-out-1"></pre>
+        <h3>Output (Part 2):</h3>
+        <pre id="day6-out-2"></pre>
+        <script type="py" src = "./python/day6.py"></script>
     </body>
 </html>
 
