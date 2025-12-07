@@ -1,0 +1,21 @@
+{
+	"folders": [
+		{
+			"path": "../../../../../Python/Advent_of_Code/2025"
+		},
+		{
+			"path": ".."
+		}
+	],
+	"settings": {
+		"files.exclude": {
+			"**/.git": true,
+			"**/.svn": true,
+			"**/.hg": true,
+			"**/.DS_Store": true,
+			"**/Thumbs.db": true,
+			".mule": true
+		},
+		"liveServer.settings.multiRootWorkspaceName": "mukherR12.github.io"
+	}
+}
