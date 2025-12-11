@@ -12,7 +12,6 @@ def run(event):
 
     combos=list(combinations(points, 2))
     combos.sort(key= lambda x: area_formula(x[0], x[1]), reverse=True)
-    document.getElementById("day9-out-1").textContent = str(area_formula(combos[0][0], combos[0][1]))
 
     ##part2 aaaaaaaaaaaaaaaa
     area = 0
@@ -27,6 +26,7 @@ def run(event):
             else:
                 area = max(area, area_formula([box_x1, box_y1], [box_x2, box_y2]))
                 
+    document.getElementById("day9-out-1").textContent = str(area_formula(combos[0][0], combos[0][1]))
     document.getElementById("day9-out-2").textContent = str(area)
 
 run_proxy = create_proxy(run)
