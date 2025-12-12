@@ -1,0 +1,1 @@
+with open("inputs/day12.txt", "r") as f: print(sum([(int(r.split(":")[0].split("x")[0].strip())*int(r.split(":")[0].split("x")[1].strip())>= 9*sum([int(n) for n in r.split(":")[1].split()])) for r in f.readlines()[31:]]))
