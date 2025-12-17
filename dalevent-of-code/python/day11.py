@@ -1,6 +1,6 @@
-import pyodide_js
-await pyodide_js.loadPackage('micropip')
-import micropip
+import pyodide_js #type: ignore
+await pyodide_js.loadPackage('micropip') #type: ignore
+import micropip #type: ignore
 await micropip.install("networkx") #type: ignore
 
 import networkx as nx
